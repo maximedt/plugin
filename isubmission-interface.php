@@ -191,7 +191,7 @@ function isubmission_pre_save_admin( $container, $activeTab, $options ) {
 	$new_file_endpoint = ISUBMISSION_PATH . $random_file;
 
     if ( !file_exists( $previous_file_endpoint ) || $previous_file_endpoint == ISUBMISSION_PATH) {
-        $content = "<?php require_once '" . ISUBMISSION_PATH . "isubmission-post-endpoint.php';";
+        $content = '<?php require_once __DIR__ . "/isubmission-post-endpoint.php";';
 
         file_put_contents( $new_file_endpoint, $content );
     } else {

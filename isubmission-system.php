@@ -119,7 +119,7 @@ function isubmission_check_file_endpoint() {
 
 	    if ( ! file_exists( $file_endpoint ) ) {
 
-            $content = "<?php require_once '" . ISUBMISSION_PATH . "isubmission-post-endpoint.php';";
+            $content = '<?php require_once __DIR__ . "/isubmission-post-endpoint.php";';
 
             file_put_contents( $file_endpoint, $content );
         }

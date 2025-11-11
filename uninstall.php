@@ -32,7 +32,7 @@ $options = ['isubmission_api_key'
 		   ,'isubmission_db_version'
 		   ,'isubmission_status'
 		   ,'isubmission_is_connected'
-//		   ,'isubmission_options'
+		   ,'isubmission_options'
 ];
 // --------------
 foreach ( $options as $option ) {
