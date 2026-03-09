@@ -193,12 +193,14 @@ class Isubmission_Post_Endpoint {
                 add_post_meta( $post_id, 'isubmission_image_source', $data['custom_field'] );
             }
 
+            $article_url = get_permalink($post_id);
+
             wp_send_json( array(
                 'status'      => true,
-                'code' => $post_data['post_status'] === 'publish' ? 'publish_success' : 'publish_pending',
+                'code' => $post_data['post_status'] === 'publish' && $article_url ? 'publish_success' : 'publish_pending',
                 'message'     => __( 'Success', ISUBMISSION_ID_LANGUAGES ),
                 'publish_status' => $post_data['post_status'],
-                'article_url' => get_permalink( $post_id )
+                'article_url' => $article_url
             ) );
         }
     }
