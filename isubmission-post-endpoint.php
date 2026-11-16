@@ -26,7 +26,7 @@ class Isubmission_Post_Endpoint {
             wp_send_json( array(
                 'status'  => false,
                 'code' => 'incorrect_api_key',
-                'message' => __( 'Incorrect API key.', ISUBMISSION_ID_LANGUAGES ) . ' Can not match ' . $bearer_token . ' and '.$apy_key
+                'message' => __( 'Incorrect API key.', ISUBMISSION_ID_LANGUAGES )
             ) );
 
             return;
